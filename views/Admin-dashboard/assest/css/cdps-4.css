@@ -1,0 +1,70 @@
+body {
+    background: #9c9c9c;
+}
+.user-box {
+    width: 400px;
+    margin: auto;
+    margin-top: 40px;
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 1.5px;
+}
+.user_header {
+    background: rgba(35, 35, 185, 0.871);
+    color: #ffffff;
+    padding: 5px 8px ;
+    border-top-left-radius:5px ;
+    border-top-right-radius:5px ;
+}
+.user_header h1 {
+    font-size: 16.5px;
+    position: relative;
+    top:5px
+}
+input {
+    width: 100%;
+    padding: 6px 8px;
+    margin-top: 15px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+} 
+.input_box {
+    padding: 20px;
+}
+.accout-forgot {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input_box button {
+    padding: 5px;
+    width: 100%;
+    margin-top: 20px;
+    border: none;
+    background: #1244c3e8;
+    border-radius: 5px;
+    color: #ffffff;
+}
+#errorMessageWrapper {
+    color: red;
+    position: relative;
+    top:20px;
+    left: 2px;
+}
+
+@media only screen and (max-width:768px){
+    .user-box {
+        width: 350px;
+    }
+    
+}
+
+/*other css  */
+.modal-body {
+    display: flex;
+    justify-content: space-between;
+}
+.new-part {
+    margin-top: 90px;
+}

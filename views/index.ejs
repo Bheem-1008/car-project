@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CarDekho: new Cars</title>
+    <link rel="stylesheet" href="./assest/css/index.css"/>
+  </head>
+
+  <body class="custom-bg-gray">
+    <%-include('./common/header')%>
+
+    <div class="banner">
+      <img src="./assest/img/banner2.png"alt="" class="img-fluid"/>
+    </div>
+
+
+    <!-- ******************************************************* products start *********************** -->
+    <div class="container car-box ">
+      <div class=" ">
+        <h1>The most searched cars</h1>
+        <div class="button-container">
+          <span class=" active-button" id="button1">Suv</span>
+          <span class="" id="button2"></span>
+        </div>
+        <div class="product-image mt-4 ">
+        <div id="section1">
+          <% if(carData.length>0){ %>
+                <div class="row row-cols-lg-4 row-cols-2">
+                  <% for(let i=0; i<carData.length; i++){%>
+                      <div class="col-lg-3 col-md-6 col-sm-6 col-6 py-2 ">
+                          <div class="images">
+                              <a href="/readmore/<%=carData[i]._id%>">
+                        
+                                <img src="<%= carData[i].pic%>" alt="" class="img-fluid"/>
+                              
+                                <div class="text">
+                                  <span><%= carData[i].name %></span>
+                                  <span class="rupiya">₹ <%= carData[i].price %>*</span>
+                        
+                                  <p href="">Check March Offers</p>
+                                 </div>
+                              </a>
+                            </div>
+                      </div>
+                      
+                      <% }%>
+              </div> 
+            
+              <% } else { %>
+                        
+                  no record found
+              <%} %>
+        </div>
+      </div>
+        
+      <div id="section2" style="display: none;">
+        Section 2 Content
+      </div>
+  
+  </div>
+ </div>
+
+    <!-- ******************************************************* products start end *********************** -->
+ 
+    <%-include('./common/footer')%>
+
+    <script src="./assest/js/Home-index.js"></script>
+  </body>
+</html>

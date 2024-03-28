@@ -1,0 +1,35 @@
+{
+  "name": "cars",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "netlify deploy --prod"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.6",
+    "crypto": "^1.0.1",
+    "ejs": "^3.1.9",
+    "express": "^4.19.1",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.18.0",
+    "express-validator": "^7.0.1",
+    "http": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.2.3",
+    "multer": "^1.4.5-lts.1",
+    "netlify-cli": "^17.21.1",
+    "netlify-lambda": "^2.0.16",
+    "nodemon": "^3.1.0",
+    "serverless-http": "^3.2.0",
+    "url": "^0.11.3",
+    "uuid": "^9.0.1"
+  }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NERVESPARKS</title>
+    <link rel="stylesheet" href="../Admin-dashboard/assest/css/view-car.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <%- include ('./common/header.ejs') %>
+    <br><br></br>
+    <!-- Content -->
+    <div class="container-fluid mt-2">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-9  table-box">
+                <% if(carData.length>0){ %>
+                <table class="table table-bordered text-center">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Car Id</th>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Modal</th>
+                            <th>Price</th>
+                            <th>Image</th>
+                            <th colspan="2">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(let i=0; i<carData.length; i++){%>
+                        <tr>
+                            <td><%= carData[i].carid %></td>
+                            <td><%= carData[i].name %></td>
+                            <td><%= carData[i].type %></td>
+                            <td><%= carData[i].modal %></td>
+                            <td><%= carData[i].price %></td>
+                            <td><img src="<%= carData[i].pic%>" alt="" style="max-width: 100px; max-height: 100px;"></td>
+                            <td><a class="btn btn-primary" href="/edit_4/<%= carData[i]._id %>">Edit</a></td>
+                            <td><a class="btn btn-danger" href="" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal" data-id="<%= carData[i]._id %>" data-delete-type="delete_4">Delete</a></td>
+                        </tr>
+                        <% }%>
+                    </tbody>
+                </table>
+                <% } else { %>
+                <p>No records found</p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+   
+  
+  
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <%- include ('./common/footer.ejs') %>
+
+    <script src="../assest/js/delete.js"></script>
+</body>
+</html>

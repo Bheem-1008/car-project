@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarDekho: new Cars</title>
+</head>
+
+<body>
+    <%- include ('./common/header.ejs') %>
+    <br><br>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-9">
+                <% if(carData.length>0){ %>
+                <div class="table-responsive" style="overflow-x: auto;">
+                    <table class="table table-bordered text-center">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Car Id</th>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Modal</th>
+                                <th>Price</th>
+                                <th>Image</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(let i=0; i<carData.length; i++){%>
+                            <tr>
+                                <td><%= carData[i].carid2 %></td>
+                                <td><%= carData[i].name2 %></td>
+                                <td><%= carData[i].type2 %></td>
+                                <td><%= carData[i].modal2 %></td>
+                                <td><%= carData[i].price2 %></td>
+                                <td><img src="<%= carData[i].pic2%>" alt="" style="max-width: 100px; max-height: 100px;"></td>
+
+                                <td><a class="btn btn-danger" href="" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal" data-id="<%= carData[i]._id %>" data-delete-type="delete_5">Delete</a></td>
+                            </tr>
+                            <% }%>
+                        </tbody>
+                    </table>
+                </div>
+                <% } else { %>
+                <p>No records found</p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Dialog -->
+    <div class="modal mt-5" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body " style="display: flex; justify-content: space-between;">
+                    <span>Are you sure you want to delete?</span>
+                    <span>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <%- include ('./common/footer.ejs') %>
+
+
+    <script src="../assest/js/delete.js"></script>
+</body>
+
+</html>

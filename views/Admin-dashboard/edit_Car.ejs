@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NERVESPARKS</title>
+    <link rel="stylesheet" href="../Admin-dashboard/assest/css/cdps-4.css">
+
+  </head>
+  <body>
+    <%-include('./common/header')%>
+
+    <div class="container-fluid new-part">
+      <div class="user-box">
+        <div class="user_header">
+          <h1>Cars</h1>
+        </div>
+
+        <div class="input_box">
+          
+          <form
+            action=""
+            method="post"
+            enctype="multipart/form-data"
+            id="dealershipForm2"
+          >
+          <input type="text" class="mt-2" name="carid" placeholder="Car Id" value="<%= editcar ? editcar.carid : '' %>"/>
+          <input type="text" class="mt-3" name="name" placeholder="Name" value="<%= editcar ? editcar.name : '' %>"/>
+          <input type="text" class="mt-3" name="type" placeholder="Car Type" value="<%= editcar ? editcar.type : '' %>"/>
+          <input type="text" class="mt-3" name="modal" placeholder="Modal" value="<%= editcar ? editcar.modal : '' %>"/>
+          <input type="text" class="mt-3" name="price" placeholder="Price" value="<%= editcar ? editcar.price : '' %>"/>
+          <input type="file" class="mt-3" name="pic" placeholder="image" value="<%= editcar ? editcar.pic : '' %>"/>
+
+
+            <button type="submit">submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <p id="modalMessage"></p>
+            <button type="button" class="btn btn-primary fs-14" id="doneButton">
+              Done
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include ('./common/footer') %>
+
+    <script src="./assest/js/cars.js"></script>
+  </body>
+</html>

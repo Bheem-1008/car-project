@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarDekho: New Cars</title>
+    <link rel="stylesheet" href="/assest/css/readmore.css">
+</head>
+<body>
+    <%- include('./common/header') %>
+    <br /><br /><br />
+    <form method="post" action="/api/usre-data" enctype="multipart/form-data" id="dealershipForm4">
+        <input type="hidden" name="id" value="6601e6b191126dd7afc6cf3f">
+        <input type="hidden" name="carid2" value="<%= car.carid %>">
+        <input type="hidden" name="name2" value="<%= car.name %>">
+        <input type="hidden" name="type2" value="<%= car.type %>">
+        <input type="hidden" name="modal2" value="<%= car.modal %>">
+        <input type="hidden" name="price2" value="<%= car.price %>">
+        <input type="hidden" name="pic2" value="<%= car.pic %>">
+
+        <div class="container-fluid readmore-box">
+            <div class="container">
+                <div class="row     ">
+                    <div class="col-md-5">
+                        <div class="image">
+                            <img src="/<%= car.pic %>" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-md-7 product-text">
+                        <h1><%= car.name %></h1>
+                        <span><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i></span>
+                        <p>₹<%= car.price %>*</p>
+                        <br />
+                        <button type="submit">Add Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container second-box">
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <div class="text-box">
+                        <h1><%= car.name %></h1>
+                        <div class="text">
+                            <p><i class="fa-solid fa-car"></i> Drive Type</p>
+                            <span><%= car.type %></span>
+                        </div>
+                        <div class="text">
+                            <p><i class="fa-solid fa-car-side"></i> Car Mode</p>
+                            <p><%= car.modal %></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+    </form>
+
+    <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p id="modalMessage"></p>
+                    <button type="button" class="btn btn-primary fs-14" id="doneButton">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>  
+
+    <!-- Ensure correct path to JavaScript file -->
+    <script src="/assest/js/readmore.js"></script>
+
+    <%- include('./common/footer') %>
+</body>
+</html>
